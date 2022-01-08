@@ -5,16 +5,100 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form>
-    <input class="num1"></input>
-    <select>
-      <option>Add</option>
-      <option>subtract</option>
-      <option>multiply</option>
-      <option>divide</option>
+    <input type="number" class="num1"></input>
+    <select class="operation">
+      <option value="add">Add</option>
+      <option value="subtract">subtract</option>
+      <option value="multiply">multiply</option>
+      <option value="divide">divide</option>
     </select>
-  </form>
+    <input type="number" class="num2"></input>
+    <button type="button" onclick="calc()">Submit</button>
+  <div class="answer"></div>
+
+  <div class="modal-container">
+    <button class="open-modal" onclick="toggleModal()">Open</button>
+    <button class="close-modal" onclick="toggleModal()">Close</button>
+  </div>
+  <div class="modal">
+    Hi how are ya
+  </div>
+  <div class="calculator">
+    <div class="calc-container">
+      <button class="button-style span-2">CE</button>
+      <button class="button-style">C</button>
+      <button class="button-style operator">/</button>
+      <button class="button-style int-button">7</button>
+      <button class="button-style int-button">8</button>
+      <button class="button-style int-button">9</button>
+      <button class="button-style operator">x</button>
+      <button class="button-style int-button">4</button>
+      <button class="button-style int-button">5</button>
+      <button class="button-style int-button">6</button>
+      <button class="button-style operator">-</button>
+      <button class="button-style int-button">1</button>
+      <button class="button-style int-button">2</button>
+      <button class="button-style int-button">3</button>
+      <button class="button-style operator">+</button>
+      <button class="button-style int-button">0</button>
+      <button class="button-style">.</button>
+      <button class="button-style span-2">=</button>
+    </div>
+  </div>
+
+  <script>
+
+    function toggleModal() {
+      const modal = document.querySelector(".modal");
+      if (modal.style.display === 'none') {
+        modal.style.display = 'flex'
+      } else {
+        closeModal()
+      }
+    }
+
+    function closeModal() {
+      const modal = document.querySelector(".modal");
+      modal.style.display = "none"
+    }
+
+
+
+
+    function calc() {
+      const answer = document.querySelector(".answer");
+      const num1 = Number(document.querySelector(".num1").value);
+      const num2 = Number(document.querySelector(".num2").value);
+      const select = document.querySelector('select');
+      const operation = select.options[select.selectedIndex].value;
+
+      if (operation === 'add') {
+        answer.innerHTML = num1 + num2
+      } else if (operation === 'subtract') {
+        answer.innerHTML = num1 - num2
+      } else if (operation === 'multiply') {
+        answer.innerHTML = num1 * num2
+      } else if (operation === 'divide') {
+        answer.innerHTML = num1 / num2
+      }
+    }
+
+    const perp = {
+      name: "Noah",
+      job: "programmer",
+      age: 26,
+      siblings: ['hayley', 'zack'],
+      jump: function() {
+        perp.color = "green"
+        perp.name = "Noey"
+      }
+    }
+
+    perp.jump()
+    console.log(perp)
+  </script>
 </body>
 </html>
