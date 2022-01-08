@@ -25,8 +25,9 @@ body {
   background: darkcyan;
 }
 
-.calculator {
+.container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -40,13 +41,13 @@ body {
     radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0, transparent 50%),  
     radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
 }
-.calc-container {
+.calc-keys {
   display: grid;
   grid-template-columns: 75px 75px 75px 75px;
   gap: 5px;
 }
 
-.button-style {
+.numbers {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 1.5em;
@@ -62,4 +63,20 @@ body {
 
 .span-2 {
   grid-column: span 2;
+}
+
+.output, .output-2 {
+  width: 100%;
+  text-align: right;
+  height: 50px;
+  background: #FFF4;
+  grid-column: span 4;
+}
+
+.output-2 {
+  height: 25px;
+}
+
+.operator {
+  border: none;
 }

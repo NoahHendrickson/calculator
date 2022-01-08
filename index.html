@@ -26,30 +26,53 @@
   <div class="modal">
     Hi how are ya
   </div>
-  <div class="calculator">
-    <div class="calc-container">
-      <button class="button-style span-2">CE</button>
-      <button class="button-style">C</button>
-      <button class="button-style operator">/</button>
-      <button class="button-style int-button">7</button>
-      <button class="button-style int-button">8</button>
-      <button class="button-style int-button">9</button>
-      <button class="button-style operator">x</button>
-      <button class="button-style int-button">4</button>
-      <button class="button-style int-button">5</button>
-      <button class="button-style int-button">6</button>
-      <button class="button-style operator">-</button>
-      <button class="button-style int-button">1</button>
-      <button class="button-style int-button">2</button>
-      <button class="button-style int-button">3</button>
-      <button class="button-style operator">+</button>
-      <button class="button-style int-button">0</button>
-      <button class="button-style">.</button>
-      <button class="button-style span-2">=</button>
+  <div class="container">
+    <div class="calculator">
+      <div class="output">hey</div>
+      <div class="calc-keys">
+        <button class="operator span-2">CE</button>
+        <button class="operator">C</button>
+        <button class="numbers operator">/</button>
+        <button class="numbers 7">7</button>
+        <button class="numbers 8">8</button>
+        <button class="numbers 9">9</button>
+        <button class="operator">x</button>
+        <button class="numbers 4">4</button>
+        <button class="numbers 5">5</button>
+        <button class="numbers 6">6</button>
+        <button class="operator">-</button>
+        <button class="numbers 1">1</button>
+        <button class="numbers 2">2</button>
+        <button class="numbers 3">3</button>
+        <button class="operator">+</button>
+        <button class="numbers 0">0</button>
+        <button class="numbers">.</button>
+        <button class="numbers span-2">=</button>
+      </div>
     </div>
   </div>
 
   <script>
+
+  const keys = document.querySelector(".calc-keys");
+  const display = document.querySelector(".output")
+
+  keys.addEventListener('click', e => {
+    const key = e.target;
+    const keyValue = key.textContent;
+    const displayValue = display.textContent;
+
+    if(displayValue === 0) {
+      display.textContent = keyValue;
+    } else {
+      display.textContent = displayValue + keyValue
+    }
+  })
+
+
+
+
+
 
     function toggleModal() {
       const modal = document.querySelector(".modal");
