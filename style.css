@@ -4,7 +4,7 @@
   --dark: #1e2e24;
   --mid: #3a4a40;
   --light: #cef0db;
-  --orange: #f7842d;
+  --orange: #e46e15;
 }
 
 body {
@@ -41,17 +41,14 @@ body {
   align-items: center;
   width: 100%;
   height: 500px;
-  background-image:#2b4034;background-image:  
-radial-gradient(at 67% 15%, hsla(95,70%,74%,1) 0, transparent 52%),  
-radial-gradient(at 28% 54%, hsla(139,23%,15%,1) 0, transparent 59%),  
-radial-gradient(at 7% 97%, hsla(124,20%,19%,1) 0, transparent 56%),  
-radial-gradient(at 73% 43%, hsla(101,95%,54%,1) 0, transparent 40%),  
-radial-gradient(at 91% 79%, hsla(34,96%,62%,1) 0, transparent 41%),  
-radial-gradient(at 18% 9%, hsla(40,89%,54%,1) 0, transparent 50%);
+  background-image:#f1ff99;background-image:  
+radial-gradient(at 53% 50%, hsla(141,35%,76%,1) 0, transparent 55%),  
+radial-gradient(at 80% 51%, hsla(161,41%,55%,1) 0, transparent 45%),  
+radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 }
 
 .calculator {
-  box-shadow: 5px 5px 15px black;
+  box-shadow: 3px 3px 15px rgba(48, 47, 47, 50%);
   border-radius: 20px;
   background: none;
 }
@@ -70,7 +67,7 @@ radial-gradient(at 18% 9%, hsla(40,89%,54%,1) 0, transparent 50%);
   height: 75px;
   padding: 0px;
   background: var(--dark);
-  color: var(--light);
+  color: white;
   border: none;
 }
 
@@ -83,21 +80,21 @@ radial-gradient(at 18% 9%, hsla(40,89%,54%,1) 0, transparent 50%);
 }
 
 .output, .output-2 {
+  position: relative;
   font-size: 2rem;
   font-family: sans-serif;
   display: grid;
   grid-template-columns: 80% 20%;
-  color: var(--light);
+  color: white;
   width: 100%;
   height: 90px;
-  background: black;
+  background: rgb(36, 36, 39);
   border-radius: 20px 20px 0px 0px;
 }
 
 .display {
   margin: auto;
   text-align: right;
-  border: solid white 3px;
   word-wrap: break-word;
   width: 225px;
 }
@@ -122,6 +119,7 @@ radial-gradient(at 18% 9%, hsla(40,89%,54%,1) 0, transparent 50%);
 }
 
 .operator {
+  font-size: 1rem;
   height: 75px;
   border: none;
   background: var(--mid);
@@ -130,4 +128,22 @@ radial-gradient(at 18% 9%, hsla(40,89%,54%,1) 0, transparent 50%);
 .equals {
   border-bottom-right-radius: 20px;
   background: var(--orange);
+}
+
+.deco, .deco-two {
+  position: absolute;
+  background: #fff2;
+  width: 100px;
+  height: 20px;
+  border-radius: 100px;
+  top: 15px;
+}
+
+.deco {
+  left: 25px;
+}
+
+.deco-two {
+  width: 20px;
+  left: 130px;
 }

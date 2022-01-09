@@ -29,17 +29,19 @@
   <div class="container">
     <div class="calculator">
       <div class="output">
+        <div class="deco"></div>
+        <div class="deco-two"></div>
         <div class="display"></div>
         <div class="display-3"></div>
         <div class="display display-2"></div>
       </div>
       <div class="calc-keys">
         <button class="operator span-2">CE</button>
-        <button class="operator">C</button>
+        <button class="operator clear">C</button>
         <button class="operator">/</button>
         <button class="numbers seven">7</button>
         <button class="numbers eight">8</button>
-        <button class="numbers nine">9</butson>
+        <button class="numbers nine">9</button>
         <button class="operator">x</button>
         <button class="numbers four">4</button>
         <button class="numbers five">5</button>
@@ -50,7 +52,7 @@
         <button class="numbers three">3</button>
         <button class="operator">+</button>
         <button class="numbers zero">0</button>
-        <button class="numbers">.</button>
+        <button class="numbers decimal">.</button>
         <button class="operator span-2 equals">=</button>
       </div>
     </div>
@@ -62,6 +64,7 @@
   const display = document.querySelector(".display")
   const displaySmall = document.querySelector(".display-2")
   const operatorDisplay = document.querySelector(".display-3")
+  const delLast = document.querySelector(".clear")
 
   keys.addEventListener('click', e => {
     const key = e.target;
@@ -77,15 +80,8 @@
         display.textContent = displayValue + keyValue
       }
       console.log(keyValue)
-    }
-    if(keyValue === 'C') {
-          const oldDisplayValue = display.textContent;
-          const newDisplayValue = oldDisplayValue.slice(0, -1);
-          display.textContent = newDisplayValue;
-        }
-
-    
-    if(key.classList.contains('operator')) {
+    } 
+    if(key.classList.contains('operator') && keyValue != 'C') {
       operatorDisplay.textContent = keyValue
       displaySmall.textContent = displayValue
       display.textContent = ''
@@ -127,6 +123,13 @@
           display.textContent = answer
           displaySmall.textContent = ''
         }
+    }
+    if(key.classList.contains('clear')) {
+      display.textContent = displayValue.slice(0, -1);
+    }
+    if(key.classList.contains('decimal')) {
+      if(display.textContent.includes('.')) {
+      }
     }
 
   })
