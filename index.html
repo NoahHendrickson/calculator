@@ -28,26 +28,30 @@
   </div>
   <div class="container">
     <div class="calculator">
-      <div class="output">hey</div>
+      <div class="output">
+        <div class="display"></div>
+        <div class="display-3"></div>
+        <div class="display display-2"></div>
+      </div>
       <div class="calc-keys">
         <button class="operator span-2">CE</button>
         <button class="operator">C</button>
-        <button class="numbers operator">/</button>
-        <button class="numbers 7">7</button>
-        <button class="numbers 8">8</button>
-        <button class="numbers 9">9</button>
+        <button class="operator">/</button>
+        <button class="numbers seven">7</button>
+        <button class="numbers eight">8</button>
+        <button class="numbers nine">9</butson>
         <button class="operator">x</button>
-        <button class="numbers 4">4</button>
-        <button class="numbers 5">5</button>
-        <button class="numbers 6">6</button>
+        <button class="numbers four">4</button>
+        <button class="numbers five">5</button>
+        <button class="numbers six">6</button>
         <button class="operator">-</button>
-        <button class="numbers 1">1</button>
-        <button class="numbers 2">2</button>
-        <button class="numbers 3">3</button>
+        <button class="numbers one">1</button>
+        <button class="numbers two">2</button>
+        <button class="numbers three">3</button>
         <button class="operator">+</button>
-        <button class="numbers 0">0</button>
+        <button class="numbers zero">0</button>
         <button class="numbers">.</button>
-        <button class="numbers span-2">=</button>
+        <button class="operator span-2 equals">=</button>
       </div>
     </div>
   </div>
@@ -55,18 +59,47 @@
   <script>
 
   const keys = document.querySelector(".calc-keys");
-  const display = document.querySelector(".output")
+  const display = document.querySelector(".display")
+  const displaySmall = document.querySelector(".display-2")
+  const operatorDisplay = document.querySelector(".display-3")
 
   keys.addEventListener('click', e => {
     const key = e.target;
     const keyValue = key.textContent;
     const displayValue = display.textContent;
+    const displayValueTwo = displaySmall.textContent;
+    const operation = operatorDisplay.textContent;
 
-    if(displayValue === 0) {
-      display.textContent = keyValue;
-    } else {
-      display.textContent = displayValue + keyValue
+    if(key.classList.contains('numbers')) {
+      if(displayValue === '0') {
+        display.textContent = keyValue;
+      } else {
+        display.textContent = displayValue + keyValue
+      }
     }
+
+    
+    if(key.classList.contains('operator')) {
+      operatorDisplay.textContent = keyValue
+      displaySmall.textContent = displayValue
+      display.textContent = ''
+        if(keyValue === 'CE') {
+          operatorDisplay.textContent = '';
+          display.textContent = '';
+          displaySmall.textContent = '';
+        }
+        if(keyValue === '=' && operation === '+') {
+          const num1 = Number(displayValue) 
+          const num2 = Number(displayValueTwo)
+
+          const answer = num1 + num2
+
+          display.textContent = answer
+          displaySmall.textContent = ''
+        }
+    }
+
+
   })
 
 
