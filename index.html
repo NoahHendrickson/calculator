@@ -76,7 +76,13 @@
       } else {
         display.textContent = displayValue + keyValue
       }
+      console.log(keyValue)
     }
+    if(keyValue === 'C') {
+          const oldDisplayValue = display.textContent;
+          const newDisplayValue = oldDisplayValue.slice(0, -1);
+          display.textContent = newDisplayValue;
+        }
 
     
     if(key.classList.contains('operator')) {
@@ -87,7 +93,7 @@
           operatorDisplay.textContent = '';
           display.textContent = '';
           displaySmall.textContent = '';
-        }
+        }  
         if(keyValue === '=' && operation === '+') {
           const num1 = Number(displayValue) 
           const num2 = Number(displayValueTwo)
@@ -96,9 +102,32 @@
 
           display.textContent = answer
           displaySmall.textContent = ''
+        } else if(keyValue === '=' && operation === '-') {
+          const num1 = Number(displayValue) 
+          const num2 = Number(displayValueTwo)
+
+          const answer = num2 - num1
+
+          display.textContent = answer
+          displaySmall.textContent = ''
+        } else if(keyValue === '=' && operation === 'x') {
+          const num1 = Number(displayValue) 
+          const num2 = Number(displayValueTwo)
+
+          const answer = num1 * num2
+
+          display.textContent = answer
+          displaySmall.textContent = ''
+        } else if(keyValue === '=' && operation === '/') {
+          const num1 = Number(displayValue) 
+          const num2 = Number(displayValueTwo)
+
+          const answer = num2 / num1
+
+          display.textContent = answer
+          displaySmall.textContent = ''
         }
     }
-
 
   })
 
