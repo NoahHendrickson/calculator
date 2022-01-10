@@ -55,7 +55,7 @@ radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 
 .calc-keys {
   display: grid;
-  grid-template-columns: 75px 75px 75px 75px;
+  grid-template-columns: 100px 100px 100px 100px;
   border-radius: 25px;
   gap: 2px;
   background: var(--darkest);

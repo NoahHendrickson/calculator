@@ -65,6 +65,7 @@
   const displaySmall = document.querySelector(".display-2")
   const operatorDisplay = document.querySelector(".display-3")
   const delLast = document.querySelector(".clear")
+  const decimal = document.querySelector(".decimal")
 
   keys.addEventListener('click', e => {
     const key = e.target;
@@ -78,8 +79,9 @@
         display.textContent = keyValue;
       } else {
         display.textContent = displayValue + keyValue
+        decimal.disabled = false
       }
-      console.log(keyValue)
+      
     } 
     if(key.classList.contains('operator') && keyValue != 'C') {
       operatorDisplay.textContent = keyValue
@@ -129,6 +131,7 @@
     }
     if(key.classList.contains('decimal')) {
       if(display.textContent.includes('.')) {
+        decimal.disabled = true
       }
     }
 
