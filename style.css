@@ -55,7 +55,7 @@ radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 
 .calc-keys {
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-columns: 85px 85px 85px 85px;
   border-radius: 25px;
   gap: 2px;
   background: var(--darkest);
@@ -64,7 +64,7 @@ radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 .numbers {
   font-family: sans-serif;
   font-size: 1.5em;
-  height: 75px;
+  height: 65px;
   padding: 0px;
   background: var(--dark);
   color: white;
@@ -120,14 +120,17 @@ radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 
 .operator {
   font-size: 1rem;
-  height: 75px;
+  height: 65px;
   border: none;
   background: var(--mid);
 }
 
+.span-2, .equals {
+  background: var(--orange);
+}
+
 .equals {
   border-bottom-right-radius: 20px;
-  background: var(--orange);
 }
 
 .deco, .deco-two {

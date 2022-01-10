@@ -79,7 +79,10 @@
         display.textContent = keyValue;
       } else {
         display.textContent = displayValue + keyValue
-        decimal.disabled = false
+        decimal.disabled = false;
+      }
+      if(display.textContent.includes('.')) {
+        decimal.disabled = true;
       }
       
     } 
@@ -87,12 +90,13 @@
       operatorDisplay.textContent = keyValue
       displaySmall.textContent = displayValue
       display.textContent = ''
-        if(keyValue === 'CE') {
-          operatorDisplay.textContent = '';
-          display.textContent = '';
-          displaySmall.textContent = '';
-        }  
-        if(keyValue === '=' && operation === '+') {
+      if(keyValue === 'CE') {
+        operatorDisplay.textContent = undefined;
+        display.textContent = undefined;
+        displaySmall.textContent = undefined;
+      }  
+      if(keyValue === '=') {
+        if(operation === '+') {
           const num1 = Number(displayValue) 
           const num2 = Number(displayValueTwo)
 
@@ -100,7 +104,8 @@
 
           display.textContent = answer
           displaySmall.textContent = ''
-        } else if(keyValue === '=' && operation === '-') {
+        }
+        if(operation === '-') {
           const num1 = Number(displayValue) 
           const num2 = Number(displayValueTwo)
 
@@ -108,15 +113,8 @@
 
           display.textContent = answer
           displaySmall.textContent = ''
-        } else if(keyValue === '=' && operation === 'x') {
-          const num1 = Number(displayValue) 
-          const num2 = Number(displayValueTwo)
-
-          const answer = num1 * num2
-
-          display.textContent = answer
-          displaySmall.textContent = ''
-        } else if(keyValue === '=' && operation === '/') {
+        }
+        if(operation === '/') {
           const num1 = Number(displayValue) 
           const num2 = Number(displayValueTwo)
 
@@ -125,16 +123,33 @@
           display.textContent = answer
           displaySmall.textContent = ''
         }
+        if(operation === 'x') {
+          const num1 = Number(displayValue) 
+          const num2 = Number(displayValueTwo)
+
+          const answer = num2 * num1
+
+          display.textContent = answer
+          displaySmall.textContent = ''
+        }
+      }
+      if(keyValue === '+' && operation === '+') {
+        const num1 = Number(displayValue) 
+        const num2 = Number(displayValueTwo)
+
+        const answer = num1 + num2
+
+        display.textContent = undefined
+        displaySmall.textContent = answer
+        if(key.classList.contains('numbers')) {
+          const newNum = keyValue + displaySmall.textContent
+          displayValue = newNum
+        }
+      }
     }
     if(key.classList.contains('clear')) {
       display.textContent = displayValue.slice(0, -1);
     }
-    if(key.classList.contains('decimal')) {
-      if(display.textContent.includes('.')) {
-        decimal.disabled = true
-      }
-    }
-
   })
 
 
