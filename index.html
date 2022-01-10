@@ -29,8 +29,6 @@
   <div class="container">
     <div class="calculator">
       <div class="output">
-        <div class="deco"></div>
-        <div class="deco-two"></div>
         <div class="display"></div>
         <div class="display-3"></div>
         <div class="display display-2"></div>
@@ -73,8 +71,9 @@
     const displayValue = display.textContent;
     const displayValueTwo = displaySmall.textContent;
     const operation = operatorDisplay.textContent;
+    const numbers = key.classList.contains('numbers')
 
-    if(key.classList.contains('numbers')) {
+    if(numbers) {
       if(displayValue === '0') {
         display.textContent = keyValue;
       } else {
@@ -94,59 +93,166 @@
         operatorDisplay.textContent = undefined;
         display.textContent = undefined;
         displaySmall.textContent = undefined;
-      }  
+      } 
+
       if(keyValue === '=') {
         if(operation === '+') {
-          const num1 = Number(displayValue) 
-          const num2 = Number(displayValueTwo)
-
-          const answer = num1 + num2
-
-          display.textContent = answer
+          display.textContent = Number(displayValue) + Number(displayValueTwo)
           displaySmall.textContent = ''
         }
         if(operation === '-') {
-          const num1 = Number(displayValue) 
-          const num2 = Number(displayValueTwo)
-
-          const answer = num2 - num1
-
-          display.textContent = answer
+          display.textContent = Number(displayValueTwo) - Number(displayValue)
           displaySmall.textContent = ''
         }
         if(operation === '/') {
-          const num1 = Number(displayValue) 
-          const num2 = Number(displayValueTwo)
-
-          const answer = num2 / num1
-
-          display.textContent = answer
+          display.textContent = Number(displayValueTwo) / Number(displayValue)
           displaySmall.textContent = ''
         }
         if(operation === 'x') {
-          const num1 = Number(displayValue) 
-          const num2 = Number(displayValueTwo)
-
-          const answer = num2 * num1
-
-          display.textContent = answer
+          display.textContent = Number(displayValueTwo) * Number(displayValue)
           displaySmall.textContent = ''
         }
       }
-      if(keyValue === '+' && operation === '+') {
-        const num1 = Number(displayValue) 
-        const num2 = Number(displayValueTwo)
 
-        const answer = num1 + num2
+      if(keyValue === '+') {
+        if(operation === '+') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValue) + Number(displayValueTwo)
+          
+          if(numbers) {
+            displayValue = keyValue + displaySmall.textContent
+          }
+        }
+        if(operation === '-') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) - Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue - displaySmall.textContent
+          }
+        }
+        if(operation === 'x') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) * Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue * displaySmall.textContent
+          }
+        }
+        if(operation === '/') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) / Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue / displaySmall.textContent
+          }
+        }
+      }
 
-        display.textContent = undefined
-        displaySmall.textContent = answer
-        if(key.classList.contains('numbers')) {
-          const newNum = keyValue + displaySmall.textContent
-          displayValue = newNum
+      if(keyValue === '-') {
+        if(operation === '+') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValue) + Number(displayValueTwo)
+          
+          if(numbers) {
+            displayValue = keyValue + displaySmall.textContent
+          }
+        }
+        if(operation === '-') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) - Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue - displaySmall.textContent
+          }
+        }
+        if(operation === 'x') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) * Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue * displaySmall.textContent
+          }
+        }
+        if(operation === '/') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) / Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue / displaySmall.textContent
+          }
+        }
+      }
+      if(keyValue === 'x') {
+        if(operation === '+') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValue) + Number(displayValueTwo)
+          
+          if(numbers) {
+            displayValue = keyValue + displaySmall.textContent
+          }
+        }
+        if(operation === '-') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) - Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue - displaySmall.textContent
+          }
+        }
+        if(operation === 'x') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) * Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue * displaySmall.textContent
+          }
+        }
+        if(operation === '/') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) / Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue / displaySmall.textContent
+          }
+        }
+      }
+      if(keyValue === '/') {
+        if(operation === '+') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValue) + Number(displayValueTwo)
+          
+          if(numbers) {
+            displayValue = keyValue + displaySmall.textContent
+          }
+        }
+        if(operation === '-') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) - Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue - displaySmall.textContent
+          }
+        }
+        if(operation === 'x') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) * Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue * displaySmall.textContent
+          }
+        }
+        if(operation === '/') {
+          display.textContent = undefined
+          displaySmall.textContent = Number(displayValueTwo) / Number(displayValue)
+        
+          if(numbers) {
+            displayValue = keyValue / displaySmall.textContent
+          }
         }
       }
     }
+
     if(key.classList.contains('clear')) {
       display.textContent = displayValue.slice(0, -1);
     }

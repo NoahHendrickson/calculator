@@ -79,9 +79,9 @@ radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
   grid-column: span 2;
 }
 
-.output, .output-2 {
+.output {
   position: relative;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: sans-serif;
   display: grid;
   grid-template-columns: 80% 20%;
@@ -93,15 +93,24 @@ radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 }
 
 .display {
-  margin: auto;
+  padding-right: 15px;
+  border-radius: 15px;
+  margin: 15px auto 0px auto;
   text-align: right;
   word-wrap: break-word;
   width: 225px;
+  height: 35px;
+  background: #fff2;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .display-2 {
+  margin-top: 0px;
   width: 225px;
-  font-size: .5em;
+  height: 25px;
+  font-size: .8em;
 }
 
 .display-3 {
@@ -143,10 +152,10 @@ radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 }
 
 .deco {
-  left: 25px;
+  left: 35px;
 }
 
 .deco-two {
   width: 20px;
-  left: 130px;
+  left: 140px;
 }
