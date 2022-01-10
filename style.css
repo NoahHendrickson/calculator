@@ -11,6 +11,7 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  background: var(--mid);
 }
 
 .answer {
@@ -41,14 +42,10 @@ body {
   align-items: center;
   width: 100%;
   height: 500px;
-  background-image:#f1ff99;background-image:  
-radial-gradient(at 53% 50%, hsla(141,35%,76%,1) 0, transparent 55%),  
-radial-gradient(at 80% 51%, hsla(161,41%,55%,1) 0, transparent 45%),  
-radial-gradient(at 29% 50%, hsla(84,42%,57%,1) 0, transparent 53%);
 }
 
 .calculator {
-  box-shadow: 3px 3px 15px rgba(48, 47, 47, 50%);
+  box-shadow: 3px 3px 15px rgba(12, 11, 11, 0.9);
   border-radius: 20px;
   background: none;
 }
