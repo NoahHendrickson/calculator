@@ -54,7 +54,7 @@ body {
   display: grid;
   grid-template-columns: 85px 85px 85px 85px;
   border-radius: 0rem 0rem 1.25rem 1.25rem;
-  gap: 0rem;
+  gap: .25rem;
   background: var(--darkest);
 }
 
