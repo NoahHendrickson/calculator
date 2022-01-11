@@ -46,15 +46,15 @@ body {
 
 .calculator {
   box-shadow: 3px 3px 15px rgba(12, 11, 11, 0.9);
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: none;
 }
 
 .calc-keys {
   display: grid;
   grid-template-columns: 85px 85px 85px 85px;
-  border-radius: 25px;
-  gap: 2px;
+  border-radius: 1.25rem;
+  gap: .25rem;
   background: var(--darkest);
 }
 
